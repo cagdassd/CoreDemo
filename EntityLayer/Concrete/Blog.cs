@@ -17,5 +17,10 @@ namespace EntityLayer.Concrete
         public bool BlogStatus { get; set; }
         public string BlogThumbnailImage { get; set; }
         public string BlogImage { get; set; }
+        public int CategoryId{ get; set; }
+        public Category Category{ get; set; }
+        public List<Comment> Comments{ get; set; }
+
+
     }
 }
