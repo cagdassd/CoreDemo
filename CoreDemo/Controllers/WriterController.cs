@@ -4,13 +4,12 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CoreDemo.Controllers
 {
-    public class Category : Controller
+    public class WriterController : Controller
     {
-        CategoryManager cm = new CategoryManager(new EfCategoryRepository());
-
+        WriterManager wc = new WriterManager(new EfWriterRepository());
         public IActionResult Index()
         {
-            var values = cm.GetAll();
+            var values = wc.GetAll();
             return View(values);
         }
     }
