@@ -10,5 +10,7 @@ namespace BusinessLayer.Abstract
     public interface IBlogService
     {
         List<Blog> GetAll();
+        List<Blog> GetListWithCategory();
+        List<Blog> GetBlogListByWriter(int id);
     }
 }

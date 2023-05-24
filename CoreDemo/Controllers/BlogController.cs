@@ -6,11 +6,18 @@ namespace CoreDemo.Controllers
 {
     public class BlogController : Controller
     {
-        BlogManager bm = new BlogManager(new EfBlogRepository());
+        BlogManager cm = new BlogManager(new EfBlogRepository());
 
         public IActionResult Index()
         {
-            var values = bm.GetAll();
+            var values = cm.GetListWithCategory();
+            return View(values);
+        }
+
+        public IActionResult BlogReadAll(int id)
+        {
+            ViewBag.Id = id;
+            var values = cm.GetBlogById(id);
             return View(values);
         }
     }

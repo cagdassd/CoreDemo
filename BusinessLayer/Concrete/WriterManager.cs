@@ -23,5 +23,10 @@ namespace BusinessLayer.Concrete
         {
             return _writerDal.GetAll();
         }
-    }
+
+		public void WriterAdd(Writer writer)
+		{
+			_writerDal.Insert(writer);
+		}
+	}
 }
